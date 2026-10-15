@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booster Autonome 4000A | Derra Power Suisse</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#FF5E00',
+                            gold: '#FFB800',
+                            dark: '#0B0D11',
+                            card: '#131722',
+                            border: '#232A3B'
+                        }
+                    },
+                    fontFamily: {
+                        tech: ['Chakra Petch', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .glow-orange { box-shadow: 0 0 35px -5px rgba(255, 94, 0, 0.45); }
+        #product-zoom { cursor: zoom-in; }
+        #main-product-image {
+            transition: transform 0.45s ease;
+            transform-origin: center center;
+            will-change: transform;
+        }
+        #product-zoom:hover #main-product-image,
+        #product-zoom.is-zoomed #main-product-image {
+            transform: scale(1.9);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased selection:bg-brand-orange selection:text-white">
+    <!-- Bandeau Haut de Page -->
+    <div class="bg-gradient-to-r from-brand-orange via-amber-500 to-brand-orange text-black font-tech font-bold text-xs sm:text-sm py-2.5 px-4 text-center tracking-wider uppercase flex items-center justify-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-red-600 animate-ping"></span>
+        <span>STOCK EN SUISSE ???? EXPÉDITION 24H LA POSTE • LIVRAISON OFFERTE DANS TOUTE LA SUISSE</span>
+    </div>
+    <!-- En-tête Navigation avec Bouton Panier -->
+    <header class="sticky top-0 z-40 bg-[#0B0D11]/95 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 bg-gradient-to-br from-brand-orange to-yellow-500 rounded-xl flex items-center justify-center text-black font-tech font-bold text-2xl shadow-lg">
+                    ?
+                </div>
+                <div>
+                    <span class="font-tech text-2xl font-bold tracking-wider text-white">DERRA<span class="text-brand-orange">POWER</span></span>
+                    <span class="block text-[10px] tracking-widest text-gray-400 font-mono uppercase">AutoDiag Suisse</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#specs" class="hover:text-brand-orange transition-colors">Spécifications</a>
+                <a href="#how" class="hover:text-brand-orange transition-colors">Utilisation</a>
+                <a href="#offers" class="hover:text-brand-orange transition-colors">Offre</a>
+                <a href="#reviews" class="hover:text-brand-orange transition-colors">Avis clients</a>
+                <a href="#contact" class="hover:text-brand-orange transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/41765761672?text=Bonjour,%20je%20souhaite%20commander%20le%20booster%204000A" target="_blank" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-500 transition-all shadow-lg">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span class="hidden sm:inline">WhatsApp</span>
+                </a>
+                <button onclick="toggleCart()" class="relative p-2.5 rounded-xl bg-brand-card border border-brand-border hover:border-brand-orange text-white transition-all flex items-center gap-2">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 text-brand-orange"></i>
+                    <span class="hidden sm:inline text-xs font-bold font-tech uppercase">Panier</span>
+                    <span id="cart-counter" class="w-5 h-5 rounded-full bg-brand-orange text-black font-tech font-bold text-xs flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section avec Galerie Interactive -->
+    <section class="py-12 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-card border border-brand-border text-xs text-brand-gold font-medium">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Technologie Ultra-Safe 4000A Peak
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-tech font-extrabold uppercase text-white leading-tight">
+                        Ne restez plus jamais <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-yellow-400 to-amber-500">bloqué en panne</span> de batterie.
+                    </h1>
+                    <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                        Le booster autonome haute puissance redémarre instantanément vos véhicules 12V (Essence et Diesel jusqu'à 8.0L) en quelques secondes, même par grand froid.
+                    </p>
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                        <div class="flex items-baseline gap-4 mb-2">
+                            <span class="font-tech text-4xl sm:text-5xl font-extrabold text-white">79.00 CHF</span>
+                            <span class="text-xl line-through text-gray-500">119.00 CHF</span>
+                            <span class="px-2.5 py-1 rounded bg-brand-orange/20 text-brand-orange text-xs font-bold uppercase">-34% PROMO</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-sm text-emerald-400 font-semibold mb-5">
+                            <i data-lucide="truck" class="w-4 h-4"></i>
+                            <span>Livraison OFFERTE en Suisse (La Poste 24/48h) • Garantie 2 ans</span>
+                        </div>
+                        <button onclick="addToCart()" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-yellow-500 text-black font-tech font-bold text-lg uppercase tracking-wider hover:brightness-110 shadow-xl glow-orange transition-all w-full sm:w-auto">
+                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                            Ajouter au panier (79 CHF)
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-3 gap-4 pt-2">
+                        <div class="p-3 rounded-xl bg-brand-card border border-brand-border text-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 mx-auto mb-1 text-brand-orange"></i>
+                            <div class="text-xs font-bold text-white">Anti-Étincelles</div>
+                            <div class="text-[10px] text-gray-400">100% Sécurisé</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-brand-card border border-brand-border text-center">
+                            <i data-lucide="snowflake" class="w-6 h-6 mx-auto mb-1 text-cyan-400"></i>
+                            <div class="text-xs font-bold text-white">-20°C à +60°C</div>
+                            <div class="text-[10px] text-gray-400">Hiver suisse</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-brand-card border border-brand-border text-center">
+                            <i data-lucide="battery-charging" class="w-6 h-6 mx-auto mb-1 text-emerald-400"></i>
+                            <div class="text-xs font-bold text-white">16'800 mAh</div>
+                            <div class="text-[10px] text-gray-400">Powerbank USB</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full max-w-md p-6 rounded-3xl bg-brand-card border border-brand-border shadow-2xl space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs text-gray-400 font-mono">Survolez pour zoomer, cliquez pour agrandir</span>
+                            <span class="px-2.5 py-0.5 rounded bg-brand-orange/20 text-brand-orange text-[10px] font-bold uppercase">4000A Peak</span>
+                        </div>
+                        <button type="button" id="product-zoom" onclick="openLightbox()" class="h-80 w-full flex items-center justify-center rounded-2xl bg-white p-4 overflow-hidden border border-brand-border relative">
+                            <img id="main-product-image" src="5d159cd0ed6a18de6a351073482d33c3.png" alt="Booster BRPOM 4000A avec pinces de démarrage" class="max-h-full max-w-full object-contain pointer-events-none">
+                        </button>
+                        <div class="grid grid-cols-4 gap-2.5">
+                            <button type="button" onclick="changeImage('5d159cd0ed6a18de6a351073482d33c3.png', this)" class="thumb-btn h-16 rounded-xl bg-white border-2 border-brand-orange p-1 flex items-center justify-center overflow-hidden hover:opacity-100 transition-all">
+                                <img src="5d159cd0ed6a18de6a351073482d33c3.png" alt="Booster avec pinces" class="h-full w-full object-contain pointer-events-none">
+                            </button>
+                            <button type="button" onclick="changeImage('a97740fc4f42e7f3f753c08c10d271fd.png', this)" class="thumb-btn h-16 rounded-xl bg-white border-2 border-brand-border p-1 flex items-center justify-center overflow-hidden hover:border-brand-orange opacity-70 hover:opacity-100 transition-all">
+                                <img src="a97740fc4f42e7f3f753c08c10d271fd.png" alt="Dimensions du booster" class="h-full w-full object-contain pointer-events-none">
+                            </button>
+                            <button type="button" onclick="changeImage('9640e9dbaff4efebdccf97a88f2f4484.png', this)" class="thumb-btn h-16 rounded-xl bg-[#080B10] border-2 border-brand-border p-1 flex items-center justify-center overflow-hidden hover:border-brand-orange opacity-70 hover:opacity-100 transition-all">
+                                <img src="9640e9dbaff4efebdccf97a88f2f4484.png" alt="Booster compact tenu en main" class="h-full w-full object-cover pointer-events-none">
+                            </button>
+                            <button type="button" onclick="changeImage('b2877d3a73563664073382566baec5b6.png', this)" class="thumb-btn h-16 rounded-xl bg-[#080B10] border-2 border-brand-border p-1 flex items-center justify-center overflow-hidden hover:border-brand-orange opacity-70 hover:opacity-100 transition-all">
+                                <img src="b2877d3a73563664073382566baec5b6.png" alt="Booster en recharge USB" class="h-full w-full object-cover pointer-events-none">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Spécifications -->
+    <section id="specs" class="py-16 bg-[#0E1118] border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-tech font-extrabold uppercase text-white">
+                    Conçu pour les conditions <span class="text-brand-orange">les plus extrêmes</span>
+                </h2>
+                <p class="text-gray-400 text-sm mt-2">Dépannage d'urgence immédiat en toute autonomie.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="zap" class="w-8 h-8 text-brand-orange mb-4"></i>
+                    <h3 class="text-lg font-tech font-bold text-white mb-2">4000A de Puissance Crête</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Démarre immédiatement les batteries totalement à plat pour autos, SUV, camionnettes et bateaux.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400 mb-4"></i>
+                    <h3 class="text-lg font-tech font-bold text-white mb-2">Pinces Smart Anti-Étincelles</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Protection totale contre les inversions de polarité et les courts-circuits. Utilisation 100% sécurisée.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <i data-lucide="snowflake" class="w-8 h-8 text-cyan-400 mb-4"></i>
+                    <h3 class="text-lg font-tech font-bold text-white mb-2">Résiste de -20°C à +60°C</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">Opérationnel même après des semaines passées dans le coffre par grand froid montagnard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mode d'emploi -->
+    <section id="how" class="py-16 bg-brand-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-tech font-extrabold uppercase text-white">Démarrer en 3 étapes (30 secondes)</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <div class="w-10 h-10 rounded-full bg-brand-orange text-black font-tech font-bold flex items-center justify-center mx-auto mb-3">1</div>
+                    <h4 class="font-bold text-white mb-1">Brancher</h4>
+                    <p class="text-xs text-gray-400">Pince rouge sur le (+) et pince noire sur le (-).</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <div class="w-10 h-10 rounded-full bg-yellow-500 text-black font-tech font-bold flex items-center justify-center mx-auto mb-3">2</div>
+                    <h4 class="font-bold text-white mb-1">Démarrer</h4>
+                    <p class="text-xs text-gray-400">Tournez la clé de contact, le moteur démarre aussitôt.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500 text-black font-tech font-bold flex items-center justify-center mx-auto mb-3">3</div>
+                    <h4 class="font-bold text-white mb-1">Ranger</h4>
+                    <p class="text-xs text-gray-400">Débranchez les pinces et replacez l'appareil dans sa housse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Offre unique -->
+    <section id="offers" class="py-16 bg-[#0E1118] border-t border-brand-border">
+        <div class="max-w-xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-tech font-extrabold uppercase text-white">
+                    Booster Autonome 4000A
+                </h2>
+                <p class="text-xs text-gray-400 mt-2">Un seul produit. Livraison offerte en Suisse.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-brand-card border-2 border-brand-orange shadow-2xl glow-orange">
+                <span class="text-xs font-tech font-bold uppercase text-brand-orange">79.00 CHF l'unité</span>
+                <h3 class="text-2xl font-tech font-bold text-white mt-1">Booster Autonome 4000A</h3>
+                <p class="text-gray-400 text-xs mt-1 mb-4">Pour équiper votre véhicule personnel.</p>
+                <div class="flex items-baseline gap-3 mb-6">
+                    <span class="text-4xl font-tech font-extrabold text-white">79.00 CHF</span>
+                    <span class="text-base line-through text-gray-500">119.00 CHF</span>
+                    <span class="px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange text-xs font-bold">-34%</span>
+                </div>
+                <ul class="text-xs text-gray-300 space-y-2.5 mb-8">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange"></i> 1x Booster 4000A Peak + Pinces Smart</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange"></i> 1x Câble USB-C Fast Charge</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange"></i> 1x Mallette antichoc rigide</li>
+                    <li class="flex items-center gap-2 text-emerald-400 font-bold"><i data-lucide="truck" class="w-4 h-4"></i> Livraison La Poste Suisse OFFERTE</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-brand-orange"></i> Garantie 24 mois</li>
+                </ul>
+                <button onclick="addToCart()" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-orange to-yellow-500 text-black font-tech font-bold uppercase tracking-wider hover:brightness-110 shadow-lg transition-all text-sm flex items-center justify-center gap-2">
+                    <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                    Ajouter au panier (79 CHF)
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Avis Clients -->
+    <section id="reviews" class="py-16 bg-brand-dark">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <div class="text-yellow-400 text-base mb-1">?????</div>
+                <h2 class="text-2xl sm:text-3xl font-tech font-extrabold uppercase text-white">Approuvé par nos conducteurs</h2>
+                <p class="text-xs text-gray-400 mt-1">Note de 4.9/5 sur les avis vérifiés en Suisse.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border text-xs text-gray-300">
+                    <p class="italic mb-4">"Par -8°C à Verbier, ma voiture ne démarrait plus. Branché en 20 secondes et le moteur est reparti aussitôt. Indispensable !"</p>
+                    <div class="font-bold text-white">Marc L. (Genève)</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border text-xs text-gray-300">
+                    <p class="italic mb-4">"Les pinces intelligentes sécurisées rassurent. Aucune étincelle, aucun risque d'inversion. Livraison très rapide."</p>
+                    <div class="font-bold text-white">Sophie B. (Vaud)</div>
+                </div>
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border text-xs text-gray-300">
+                    <p class="italic mb-4">"Je le garde dans le coffre. Compact, clair, et rassurant sur la route."</p>
+                    <div class="font-bold text-white">Alexandre R. (Neuchâtel)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-16 bg-[#0E1118] border-t border-brand-border">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl sm:text-3xl font-tech font-extrabold uppercase text-white">Contact</h2>
+                <p class="text-sm text-gray-400 mt-2">Une question avant de commander ? Nous répondons depuis Meyrin.</p>
+            </div>
+            <div class="p-8 rounded-3xl bg-brand-card border border-brand-border text-center space-y-4">
+                <p class="font-tech text-xl font-bold text-white">Derra Power Suisse</p>
+                <p class="text-sm text-gray-300">Rue de la Golette 15G<br>1217 Meyrin, Suisse</p>
+                <a href="tel:+41765761672" class="block text-sm font-semibold text-white hover:text-brand-orange">+41 76 576 16 72</a>
+                <a href="https://wa.me/41765761672?text=Bonjour,%20je%20souhaite%20commander%20le%20booster%204000A" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-tech font-bold text-sm uppercase tracking-wider transition-all">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Écrire sur WhatsApp
+                </a>
+                <p class="text-[11px] text-gray-500">Réponse rapide par téléphone ou WhatsApp. Expédition depuis la Suisse.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="py-10 bg-black border-t border-brand-border text-xs text-gray-400">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
+            <div>
+                <p class="font-tech text-base font-bold text-white">Derra Power Suisse</p>
+                <p class="mt-2 text-gray-500">AutoDiag Suisse</p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2">Adresse</p>
+                <p>Rue de la Golette 15G<br>1217 Meyrin, Suisse</p>
+            </div>
+            <div>
+                <p class="font-bold text-white mb-2">Téléphone / WhatsApp</p>
+                <a href="tel:+41765761672" class="block hover:text-brand-orange">+41 76 576 16 72</a>
+                <a href="https://wa.me/41765761672?text=Bonjour,%20je%20souhaite%20commander%20le%20booster%204000A" target="_blank" class="inline-flex items-center gap-1.5 mt-2 text-emerald-400 font-bold hover:underline">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+        <p class="text-center text-gray-600 mt-8">© 2026 Derra Power Suisse. Tous droits réservés.</p>
+    </footer>
+    <a href="https://wa.me/41765761672?text=Bonjour,%20je%20souhaite%20commander%20le%20booster%204000A" target="_blank" class="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 px-4 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-tech font-bold text-sm shadow-2xl">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        WhatsApp
+    </a>
+    <div id="cart-drawer-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#11141D] border-l border-brand-border z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between shadow-2xl">
+        <div class="p-6 border-b border-brand-border flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-brand-orange"></i>
+                <h3 class="font-tech font-bold uppercase text-white text-lg">Votre Panier</h3>
+            </div>
+            <button onclick="toggleCart()" class="p-2 rounded-lg bg-brand-dark hover:text-brand-orange text-gray-400">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+        <div id="cart-items-container" class="p-6 space-y-4 overflow-y-auto flex-1"></div>
+        <div class="p-6 border-t border-brand-border bg-[#0B0D11] space-y-4">
+            <div class="space-y-2 text-xs">
+                <div class="flex justify-between text-gray-400">
+                    <span>Livraison La Poste Suisse</span>
+                    <span class="text-emerald-400 font-bold uppercase">Gratuit</span>
+                </div>
+                <div class="flex justify-between text-base font-bold text-white pt-2 border-t border-brand-border/60">
+                    <span>Total à régler</span>
+                    <span id="cart-total-display" class="font-tech text-2xl text-brand-orange">0.00 CHF</span>
+                </div>
+            </div>
+            <a id="cart-stripe-link" href="https://buy.stripe.com/7sYcN5ctK2omee46yp1B600?quantity=1" target="_blank" class="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-yellow-500 text-black font-tech font-bold text-base uppercase tracking-wider hover:brightness-110 shadow-lg glow-orange transition-all">
+                <i data-lucide="credit-card" class="w-5 h-5"></i>
+                Payer avec Stripe (<span id="btn-total-display">0.00 CHF</span>)
+            </a>
+            <a href="https://wa.me/41765761672?text=Bonjour,%20je%20souhaite%20commander%20le%20booster%204000A" target="_blank" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-tech font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                Commander sur WhatsApp
+            </a>
+            <p class="text-[10px] text-gray-500 text-center flex items-center justify-center gap-1.5">
+                <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
+                Paiement 100% sécurisé • Expédié de Suisse
+            </p>
+        </div>
+    </div>
+    <div id="lightbox" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 sm:p-8" style="background: rgba(0, 0, 0, 0.92);" onclick="closeLightbox(event)">
+        <button type="button" onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-11 h-11 rounded-full bg-white/10 text-white text-2xl leading-none hover:bg-white/20" aria-label="Fermer">×</button>
+        <img id="lightbox-image" alt="Booster Autonome 4000A en grand format" class="max-h-[92vh] max-w-[92vw] object-contain rounded-xl shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+    <script>
+        lucide.createIcons();
+        const PRODUCT_IMAGE = "5d159cd0ed6a18de6a351073482d33c3.png";
+        const STRIPE_URL = "https://buy.stripe.com/7sYcN5ctK2omee46yp1B600";
+        const UNIT_PRICE = 79;
+        const PRODUCT_NAME = "Booster Autonome 4000A";
+        let cart = {
+            qty: 0
+        };
+        function changeImage(imageSrc, clickedBtn) {
+            const mainImg = document.getElementById('main-product-image');
+            mainImg.src = imageSrc;
+            document.querySelectorAll('.thumb-btn').forEach(btn => {
+                btn.classList.remove('border-brand-orange');
+                btn.classList.add('border-brand-border', 'opacity-70');
+            });
+            clickedBtn.classList.remove('border-brand-border', 'opacity-70');
+            clickedBtn.classList.add('border-brand-orange');
+        }
+        function toggleCart() {
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const drawer = document.getElementById('cart-drawer');
+            if (drawer.classList.contains('translate-x-full')) {
+                drawer.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+                updateCartUI();
+            } else {
+                drawer.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            }
+        }
+        function openCart() {
+            const overlay = document.getElementById('cart-drawer-overlay');
+            const drawer = document.getElementById('cart-drawer');
+            drawer.classList.remove('translate-x-full');
+            overlay.classList.remove('hidden');
+            updateCartUI();
+        }
+        function addToCart() {
+            cart.qty += 1;
+            openCart();
+        }
+        function changeQty(delta) {
+            cart.qty += delta;
+            if (cart.qty < 1) cart.qty = 1;
+            updateCartUI();
+        }
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const counter = document.getElementById('cart-counter');
+            const totalDisplay = document.getElementById('cart-total-display');
+            const btnTotalDisplay = document.getElementById('btn-total-display');
+            const stripeLink = document.getElementById('cart-stripe-link');
+            counter.innerText = cart.qty;
+            const total = UNIT_PRICE * cart.qty;
+            totalDisplay.innerText = total.toFixed(2) + " CHF";
+            btnTotalDisplay.innerText = total.toFixed(2) + " CHF";
+            const stripeCheckoutUrl = "https://buy.stripe.com/7sYcN5ctK2omee46yp1B600?quantity=" + (cart.qty > 0 ? cart.qty : 1);
+            stripeLink.href = stripeCheckoutUrl;
+            if (cart.qty < 1) {
+                container.innerHTML = '<p class="text-sm text-gray-400 text-center py-12">Votre panier est vide.</p>';
+                return;
+            }
+            container.innerHTML = `
+                <div class="p-4 rounded-2xl bg-brand-card border border-brand-border flex gap-4 items-center">
+                    <div class="w-16 h-16 rounded-xl bg-white p-1.5 flex items-center justify-center border border-brand-border">
+                        <img src="${PRODUCT_IMAGE}" alt="" class="max-h-full max-w-full object-contain">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-white text-sm">${PRODUCT_NAME}</h4>
+                        <div class="text-gray-400 text-[11px] mt-0.5">79.00 CHF l'unité</div>
+                        <div class="text-brand-orange font-tech font-bold text-base mt-0.5">${total.toFixed(2)} CHF</div>
+                        <div class="flex items-center gap-3 mt-2">
+                            <button type="button" onclick="changeQty(-1)" class="w-7 h-7 rounded-lg bg-brand-dark border border-brand-border text-white flex items-center justify-center hover:border-brand-orange">-</button>
+                            <span class="text-sm font-bold text-white">${cart.qty}</span>
+                            <button type="button" onclick="changeQty(1)" class="w-7 h-7 rounded-lg bg-brand-dark border border-brand-border text-white flex items-center justify-center hover:border-brand-orange">+</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        const zoomBox = document.getElementById('product-zoom');
+        const mainProductImage = document.getElementById('main-product-image');
+        zoomBox.addEventListener('mousemove', (event) => {
+            const rect = zoomBox.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 100;
+            const y = ((event.clientY - rect.top) / rect.height) * 100;
+            mainProductImage.style.transformOrigin = x + '% ' + y + '%';
+        });
+        zoomBox.addEventListener('mouseleave', () => {
+            mainProductImage.style.transformOrigin = 'center center';
+            zoomBox.classList.remove('is-zoomed');
+        });
+        zoomBox.addEventListener('touchstart', () => {
+            zoomBox.classList.add('is-zoomed');
+        }, { passive: true });
+        function openLightbox() {
+            const source = document.getElementById('main-product-image');
+            const lightbox = document.getElementById('lightbox');
+            const fullImage = document.getElementById('lightbox-image');
+            fullImage.src = source.currentSrc || source.src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(event) {
+            if (event && event.target && event.target.id === 'lightbox-image') return;
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeLightbox();
+        });
+        updateCartUI();
+    </script>
+</body>
+</html>
